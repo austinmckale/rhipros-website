@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const towns = ["Allentown","Bethlehem","Easton","Whitehall","Emmaus","Macungie","Nazareth","Hellertown","Catasauqua","Coplay"];
+const service = "Bathroom Remodeling";
+---
+
+<BaseLayout
+  title="Bathroom Remodeling in Lehigh Valley, PA | Revision Home Improvements"
+  description="Bathroom remodeling and updates across the Lehigh Valley, PA. Clear scope, clean work, and professional finish quality."
+>
+  <section class="wrap section" style="padding-top: 0;">
+    <div class="card">
+      <h1>Bathroom Remodeling</h1>
+      <p class="muted" style="margin-top:0;">Functional, durable bathroom renovations with a clear process and clean finish work.</p>
+
+      <div class="cta">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+
+      <div class="grid">
+        <div class="box">
+          <h2>Common bathroom projects</h2>
+          <ul>
+            <li>Bathroom refreshes and updates</li>
+            <li>Finish work and trim details</li>
+            <li>Repair + punch-list completion</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>What you can expect</h2>
+          <ul>
+            <li>Fast response (24–48 hours)</li>
+            <li>Clear estimate and next steps</li>
+            <li>Tidy job site and communication</li>
+            <li>Work we stand behind</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Service area</h2>
+      <p class="muted">Serving the Lehigh Valley, including {towns.join(", ")} and nearby.</p>
+
+      <h2>Bathroom remodeling FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>How do we start?</summary>
+          <p class="muted">Send a few details (scope, city/zip, timeline). We’ll follow up to confirm fit and schedule next steps.</p>
+        </details>
+        <details>
+          <summary>Can you help if we’re not sure what we want yet?</summary>
+          <p class="muted">Yes. We can help clarify priorities and propose practical options that match budget and timeline.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 { margin: 0 0 10px; }
+  h2 { margin: 18px 0 10px; font-size: 18px; }
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  li { margin: 6px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .box { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; }
+  .faq details { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 10px 0; }
+  .faq summary { cursor: pointer; font-weight: 900; }
+  .faq p { margin: 10px 0 0; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+</style>

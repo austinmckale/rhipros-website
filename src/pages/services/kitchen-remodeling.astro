@@ -1,0 +1,87 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const towns = ["Allentown","Bethlehem","Easton","Whitehall","Emmaus","Macungie","Nazareth","Hellertown","Catasauqua","Coplay"];
+const service = "Kitchen Remodeling";
+---
+
+<BaseLayout
+  title={`Kitchen Remodeling in Lehigh Valley, PA | Revision Home Improvements`}
+  description="Kitchen remodeling and updates across the Lehigh Valley, PA. Get a clear scope, an honest estimate, and professional finish work."
+>
+  <section class="wrap section" style="padding-top: 0;">
+    <div class="card">
+      <h1>Kitchen Remodeling</h1>
+      <p class="muted" style="margin-top:0;">
+        Upgrade your kitchen with a plan you can trust—clear scope, clean work, and communication throughout.
+        Serving the <strong>Lehigh Valley, PA</strong>.
+      </p>
+
+      <div class="cta">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+
+      <div class="grid">
+        <div class="box">
+          <h2>Common kitchen projects</h2>
+          <ul>
+            <li>Layout and functional improvements</li>
+            <li>Finish updates and refreshes</li>
+            <li>Flooring, trim, and detail work</li>
+            <li>Repair + punch-list wrap-up to get it “finished”</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>What you can expect</h2>
+          <ul>
+            <li>Fast response (24–48 hours)</li>
+            <li>Clear estimate and next steps</li>
+            <li>Respectful, tidy job site</li>
+            <li>Work we stand behind</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Service area</h2>
+      <p class="muted">We serve homeowners across the Lehigh Valley, including {towns.join(", ")} and nearby towns.</p>
+
+      <h2>Kitchen remodeling FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>Do you help with planning and scope?</summary>
+          <p class="muted">Yes. We’ll start by understanding your priorities, budget range, and timeline, then map out the right scope.</p>
+        </details>
+        <details>
+          <summary>Can you provide options to fit different budgets?</summary>
+          <p class="muted">Often, yes. When it helps, we’ll share good/better/best approaches so you can choose what fits.</p>
+        </details>
+        <details>
+          <summary>How quickly can we get an estimate?</summary>
+          <p class="muted">Most new requests get a reply within 24–48 hours to schedule next steps and confirm details.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 { margin: 0 0 10px; }
+  h2 { margin: 18px 0 10px; font-size: 18px; }
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  li { margin: 6px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .box { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; }
+  .faq details { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 10px 0; }
+  .faq summary { cursor: pointer; font-weight: 900; }
+  .faq p { margin: 10px 0 0; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+</style>

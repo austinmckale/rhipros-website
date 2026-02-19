@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const towns = ["Allentown","Bethlehem","Easton","Whitehall","Emmaus","Macungie","Nazareth","Hellertown","Catasauqua","Coplay"];
+const service = "Basement Finishing";
+---
+
+<BaseLayout
+  title="Basement Finishing in Lehigh Valley, PA | Revision Home Improvements"
+  description="Basement finishing and remodeling across the Lehigh Valley, PA. Turn unused space into comfortable, usable square footage."
+>
+  <section class="wrap section" style="padding-top: 0;">
+    <div class="card">
+      <h1>Basement Finishing</h1>
+      <p class="muted" style="margin-top:0;">Turn unused space into comfortable, usable square footage with a clear plan and clean finish work.</p>
+
+      <div class="cta">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+
+      <div class="grid">
+        <div class="box">
+          <h2>Common basement projects</h2>
+          <ul>
+            <li>Finishing for living space, office, or rec room</li>
+            <li>Drywall, trim, and flooring work</li>
+            <li>Repairs and upgrades to get it “move-in ready”</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>What you can expect</h2>
+          <ul>
+            <li>Fast response (24–48 hours)</li>
+            <li>Clear estimate and next steps</li>
+            <li>Communication throughout</li>
+            <li>Work we stand behind</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Service area</h2>
+      <p class="muted">Serving the Lehigh Valley, including {towns.join(", ")} and nearby.</p>
+
+      <h2>Basement finishing FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>Can you help scope a basement finishing plan?</summary>
+          <p class="muted">Yes. We’ll start with your goals, timeline, and budget range, then define a practical scope.</p>
+        </details>
+        <details>
+          <summary>How do we start?</summary>
+          <p class="muted">Request a quote with your city/zip and a short description. We’ll follow up within 24–48 hours.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 { margin: 0 0 10px; }
+  h2 { margin: 18px 0 10px; font-size: 18px; }
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  li { margin: 6px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .box { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; }
+  .faq details { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 10px 0; }
+  .faq summary { cursor: pointer; font-weight: 900; }
+  .faq p { margin: 10px 0 0; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+</style>

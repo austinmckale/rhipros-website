@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const towns = ["Allentown","Bethlehem","Easton","Whitehall","Emmaus","Macungie","Nazareth","Hellertown","Catasauqua","Coplay"];
+const service = "Water Damage Restoration";
+---
+
+<BaseLayout
+  title="Water Damage Restoration (Lehigh Valley, PA) | Revision Home Improvements"
+  description="Water damage restoration support in the Lehigh Valley, PA. Fast scheduling, clear scope, and help navigating next steps."
+>
+  <section class="wrap section" style="padding-top: 0;">
+    <div class="card">
+      <h1>Water Damage Restoration</h1>
+      <p class="muted" style="margin-top:0;">If you have water damage, the next steps matter. Call or send details and we’ll help you move forward quickly.</p>
+
+      <div class="cta">
+        <a class="btn" href={`tel:${phoneTel}`}>Call {phone}</a>
+        <a class="btn btn-outline" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request Help</a>
+      </div>
+
+      <div class="grid">
+        <div class="box">
+          <h2>What we can help with</h2>
+          <ul>
+            <li>Scope planning and repair/restoration coordination</li>
+            <li>Drywall and finish restoration</li>
+            <li>Clear communication and next-step guidance</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h2>What to send us</h2>
+          <ul>
+            <li>City/zip and a brief description</li>
+            <li>Photos of affected areas (if safe)</li>
+            <li>Any urgency/timeline constraints</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>Service area</h2>
+      <p class="muted">Serving the Lehigh Valley, including {towns.join(", ")} and nearby.</p>
+
+      <h2>Water damage FAQs</h2>
+      <div class="faq">
+        <details>
+          <summary>Can you help with insurance-claim scoping?</summary>
+          <p class="muted">We can support project scoping and documentation needs. Share what you have and we’ll advise next steps.</p>
+        </details>
+        <details>
+          <summary>How fast can you respond?</summary>
+          <p class="muted">Call for urgent situations. For online requests, we aim to reply within 24–48 hours.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href={`tel:${phoneTel}`}>Call {phone}</a>
+        <a class="btn btn-outline" href={`/request-a-quote?service=${encodeURIComponent(service)}`}>Request Help</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 { margin: 0 0 10px; }
+  h2 { margin: 18px 0 10px; font-size: 18px; }
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  li { margin: 6px 0; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+  .box { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 16px; padding: 14px; }
+  .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 14px; }
+  .faq details { background: rgba(18,24,38,0.55); border: 1px solid var(--border); border-radius: 14px; padding: 14px 16px; margin: 10px 0; }
+  .faq summary { cursor: pointer; font-weight: 900; }
+  .faq p { margin: 10px 0 0; }
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+</style>
