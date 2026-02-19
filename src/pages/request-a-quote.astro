@@ -1,99 +1,97 @@
 ---
-const phone = "484-706-9229";
-const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const toEmail = "rhisolutions316@gmail.com";
+
+const service = Astro.url.searchParams.get("service") ?? "";
+const location = Astro.url.searchParams.get("location") ?? "";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Request a Quote | Revision Home Improvements</title>
-    <meta name="description" content="Request a quote from Revision Home Improvements. Serving Lehigh Valley home improvement, remodeling, and repairs." />
-  </head>
-  <body>
-    <main class="wrap">
-      <header class="header">
-        <a href="/" class="brand">Revision Home Improvements</a>
-        <div class="actions">
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </div>
-      </header>
+<BaseLayout
+  title="Request a Quote | Revision Home Improvements (Lehigh Valley, PA)"
+  description="Request a quote for remodeling, repairs, or flooring in the Lehigh Valley, PA. Share a few details and we’ll reply within 24–48 hours."
+>
+  <section class="wrap section" style="padding-top: 0;">
+    <div class="card">
+      <h1>Request a Quote</h1>
+      <p class="muted" style="margin-top:0;">
+        We aim to reply within <strong>24–48 hours</strong>. Your request will be sent to <strong>{toEmail}</strong>.
+        <br />
+        <span class="muted">No spam—just a fast follow-up about your project.</span>
+      </p>
 
-      <section class="card">
-        <h1>Request a Quote</h1>
-        <p class="muted">We’ll reply within 24–48 hours. Your request will be sent to <strong>{toEmail}</strong> and tagged as a <strong>Website lead</strong>.</p>
+      <!--
+        NOTE: This form posts to /api/quote (Netlify/Vercel/etc).
+        We'll wire it up once hosting is chosen.
+      -->
+      <form method="post" action="/api/quote">
+        <input type="hidden" name="lead_source" value="website" />
 
-        <!--
-          NOTE: This form posts to /api/quote (Netlify/Vercel/etc).
-          We'll wire it up once hosting is chosen.
-        -->
-        <form method="post" action="/api/quote">
-          <input type="hidden" name="lead_source" value="website" />
-          <div class="grid">
-            <label>
-              Full name
-              <input name="name" autocomplete="name" required />
-            </label>
-            <label>
-              Phone
-              <input name="phone" autocomplete="tel" required />
-            </label>
-            <label>
-              Email
-              <input name="email" type="email" autocomplete="email" required />
-            </label>
-            <label>
-              City / Zip
-              <input name="location" autocomplete="postal-code" />
-            </label>
-          </div>
-
+        <div class="grid">
           <label>
-            Tell us about your project
-            <textarea name="message" rows="6" required placeholder="What do you want done? Any photos/links? Desired timeline?"></textarea>
+            Full name
+            <input name="name" autocomplete="name" required />
           </label>
-
-          <div class="row">
-            <button class="btn" type="submit">Send Request</button>
-            <a class="btn btn-outline" href="/">Back to Home</a>
-          </div>
-        </form>
-
-        <div class="fineprint">
-          Prefer to talk? Call us at <a href={`tel:${phoneTel}`}>{phone}</a>.
+          <label>
+            Phone
+            <input name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(484) 555-1234" />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </label>
+          <label>
+            City / Zip
+            <input name="location" autocomplete="postal-code" value={location} placeholder="e.g., Bethlehem 18015" />
+          </label>
+          <label>
+            Project type
+            <select name="service" value={service}>
+              <option value="">Select…</option>
+              <option value="Remodeling" selected={service === "Remodeling"}>Remodeling</option>
+              <option value="Repairs" selected={service === "Repairs"}>Repairs & Punch Lists</option>
+              <option value="Flooring" selected={service === "Flooring"}>Flooring & Finishes</option>
+            </select>
+          </label>
+          <label>
+            Preferred contact
+            <select name="preferred_contact">
+              <option value="">No preference</option>
+              <option value="Call">Call</option>
+              <option value="Text">Text</option>
+              <option value="Email">Email</option>
+            </select>
+          </label>
         </div>
-      </section>
-    </main>
-  </body>
-</html>
+
+        <label>
+          Tell us about your project
+          <textarea
+            name="message"
+            rows="6"
+            required
+            placeholder="What do you want done? Any measurements/photos/links? Desired timeline?"
+          ></textarea>
+        </label>
+
+        <div class="row">
+          <button class="btn" type="submit">Send Request</button>
+          <a class="btn btn-outline" href="/">Back to Home</a>
+        </div>
+
+        <div class="fineprint muted">
+          Prefer to talk it through? Call us and we’ll get you on the schedule.
+        </div>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  :root {
-    --bg: #0b0f14;
-    --card: #121826;
-    --muted: #a9b3c1;
-    --text: #eef2f7;
-    --brand: #ff3b30;
-    --border: rgba(255, 255, 255, 0.12);
-  }
-  body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial; background: var(--bg); color: var(--text); }
-  .wrap { max-width: 900px; margin: 0 auto; padding: 18px 20px 40px; }
-  a { color: inherit; }
-  .header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0 16px; }
-  .brand { font-weight: 800; text-decoration: none; }
-
-  .card {
-    background: rgba(18, 24, 38, 0.7);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 18px;
-  }
   h1 { margin: 0 0 10px; }
-  .muted { color: var(--muted); margin: 0 0 16px; }
 
-  label { display: grid; gap: 6px; margin: 12px 0; font-weight: 600; }
-  input, textarea {
+  label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
+  input, textarea, select {
     background: rgba(255,255,255,0.04);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -101,27 +99,11 @@ const toEmail = "rhisolutions316@gmail.com";
     color: var(--text);
     font: inherit;
   }
-  input:focus, textarea:focus { outline: 2px solid rgba(255, 59, 48, 0.35); outline-offset: 1px; }
 
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
 
-  .btn {
-    background: var(--brand);
-    color: white;
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-weight: 800;
-    border: 1px solid transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .btn-outline { background: transparent; border: 1px solid var(--border); }
-
-  .fineprint { margin-top: 14px; color: var(--muted); }
+  .fineprint { margin-top: 14px; }
 
   @media (max-width: 720px) {
     .grid { grid-template-columns: 1fr; }

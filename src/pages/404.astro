@@ -1,0 +1,24 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page not found | Revision Home Improvements"
+  description="Sorry—this page doesn’t exist. Head back home or request a quote."
+>
+  <section class="wrap section" style="padding-top:0;">
+    <div class="card">
+      <h1>Page not found</h1>
+      <p class="muted" style="margin-top:0;">That link doesn’t look right. Here are a couple quick options:</p>
+      <div class="cta">
+        <a class="btn" href="/">Back to Home</a>
+        <a class="btn btn-outline" href="/request-a-quote">Request a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  h1 { margin: 0 0 10px; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+</style>

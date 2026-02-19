@@ -1,256 +1,183 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
 const phone = "484-706-9229";
 const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Revision Home Improvements | Lehigh Valley Home Improvement & Remodeling</title>
-    <meta name="description" content="Revision Home Improvements provides home improvement, remodeling, and repair services in the Lehigh Valley. Call for an estimate or request a quote online." />
-  </head>
-  <body>
-    <main>
-      <header class="wrap header">
-        <div class="brand">Revision Home Improvements</div>
-        <nav class="nav">
-          <a href="#services">Services</a>
-          <a href="#process">How it works</a>
-          <a href="#gallery">Work</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn" href="/request-a-quote">Request a Quote</a>
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </nav>
-      </header>
+<BaseLayout
+  title="Revision Home Improvements | Lehigh Valley Home Improvement, Remodeling & Repairs"
+  description="Home improvement, remodeling, and repair services in the Lehigh Valley, PA. Request a quote online or call for an estimate."
+>
+  <section class="wrap hero">
+    <div>
+      <h1>Lehigh Valley Home Improvement, Remodeling & Repairs</h1>
+      <p class="sub">
+        Clear estimates. Clean, professional work. A simple process that keeps you in the loop.
+        Serving homeowners across the <strong>Lehigh Valley, PA</strong>.
+      </p>
 
-      <section class="wrap hero">
-        <div>
-          <h1>Lehigh Valley Home Improvement, Remodeling & Repairs</h1>
-          <p class="sub">
-            Revision Home Improvements helps homeowners upgrade, repair, and refresh their spaces—without the hassle.
-            Serving the <strong>Lehigh Valley</strong>.
-          </p>
-          <div class="cta">
-            <a class="btn" href="/request-a-quote">Request a Quote</a>
-            <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-          </div>
-          <p class="note">
-            Fast response (24–48 hours). Clear estimates. We stand behind our work.
-          </p>
-        </div>
-        <div class="hero-card">
-          <div class="hero-card-title">Fast response</div>
-          <div class="hero-card-body">We aim to reply within <strong>24–48 hours</strong>.</div>
-          <div class="hero-card-title">Estimates</div>
-          <div class="hero-card-body">Transparent estimates tailored to your project.</div>
-          <div class="hero-card-title">Guaranteed repairs</div>
-          <div class="hero-card-body">We stand behind our work.</div>
-        </div>
-      </section>
+      <div class="hero-bullets" aria-label="Highlights">
+        <div><strong>Fast response</strong> in 24–48 hours</div>
+        <div><strong>Clear options</strong> (good / better / best when helpful)</div>
+        <div><strong>Work we stand behind</strong>—reach out if anything comes up</div>
+      </div>
 
-      <section id="services" class="wrap section">
-        <h2>Home Services in the Lehigh Valley</h2>
-        <p class="sub" style="margin-top:0;">Fast response. Clear estimates. High-quality work.</p>
-        <div class="bullets">
-          <div><strong>Trustworthy</strong> and reliable team members</div>
-          <div>We help <strong>you</strong> create your vision of your home</div>
-          <div>Responsible work at <strong>affordable</strong> prices</div>
-        </div>
-        <div class="services">
-          <a class="service" href="/services/remodeling">
-            <h3>Remodeling</h3>
-            <p>Kitchens, bathrooms, and interior updates that elevate your space.</p>
-            <span class="service-link">Learn more →</span>
-          </a>
-          <a class="service" href="/services/repairs">
-            <h3>Repairs & Punch Lists</h3>
-            <p>Doors, trim, drywall, touch-ups—get the nagging list done.</p>
-            <span class="service-link">Learn more →</span>
-          </a>
-          <a class="service" href="/services/flooring">
-            <h3>Flooring & Finishes</h3>
-            <p>Durable flooring and clean, professional finishing details.</p>
-            <span class="service-link">Learn more →</span>
-          </a>
-        </div>
-        <div class="cta" style="margin-top: 16px;">
-          <a class="btn" href="/request-a-quote">Request a Quote</a>
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </div>
-        <div class="trust">
-          <div class="trust-item"><strong>Response</strong><br/>24–48 hours</div>
-          <div class="trust-item"><strong>Service Area</strong><br/>Lehigh Valley, PA</div>
-          <div class="trust-item"><strong>Work</strong><br/>Guaranteed</div>
-        </div>
-      </section>
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href="/request-a-quote">Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+      <p class="note">
+        Prefer a quick start? Tell us your project + city/zip and we’ll follow up to schedule next steps.
+      </p>
+    </div>
 
-      <section id="process" class="wrap section">
-        <h2>How it works</h2>
-        <ol class="steps">
-          <li>
-            <div class="step-title">Book Online</div>
-            <div>You share your needs with us and we’ll schedule a visit if needed.</div>
-          </li>
-          <li>
-            <div class="step-title">Phone Confirmation</div>
-            <div>We contact you for details and schedule an onsite estimate if necessary.</div>
-          </li>
-          <li>
-            <div class="step-title">Detailed Estimate</div>
-            <div>We send you details and a cost estimate of your project needs.</div>
-          </li>
-          <li>
-            <div class="step-title">Task Completion</div>
-            <div>Our team completes the work while you relax and enjoy the improvements.</div>
-          </li>
-        </ol>
-      </section>
+    <aside class="hero-card" aria-label="Quick quote">
+      <div class="hero-card-title">Quick Quote</div>
+      <div class="hero-card-body">Answer a few questions and we’ll reply within <strong>24–48 hours</strong>.</div>
 
-      <section id="gallery" class="wrap section">
-        <h2>Recent Work</h2>
-        <p class="sub" style="margin-top: 0;">A few snapshots from past projects.</p>
-        <div class="gallery">
-          <img src="/gallery/cdd6b-img_1479.jpg" alt="Project photo" loading="lazy" />
-          <img src="/gallery/7e4fe-img_8568.jpg" alt="Project photo" loading="lazy" />
-          <img src="/gallery/4864b-img_7545.jpg" alt="Project photo" loading="lazy" />
-          <img src="/gallery/654ed-img_7827.jpg" alt="Project photo" loading="lazy" />
-          <img src="/gallery/6cca4-img_7834.jpg" alt="Project photo" loading="lazy" />
-          <img src="/gallery/af916-img_7708-1.jpg" alt="Project photo" loading="lazy" />
-        </div>
-        <div class="cta" style="margin-top: 16px;">
-          <a class="btn" href="/request-a-quote">Request a Quote</a>
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </div>
-      </section>
+      <form class="mini-form" method="get" action="/request-a-quote">
+        <label>
+          Project type
+          <select name="service">
+            <option value="">Select…</option>
+            <option value="Remodeling">Remodeling</option>
+            <option value="Repairs">Repairs & Punch Lists</option>
+            <option value="Flooring">Flooring & Finishes</option>
+          </select>
+        </label>
+        <label>
+          City / Zip
+          <input name="location" autocomplete="postal-code" placeholder="e.g., Allentown 18103" />
+        </label>
+        <button class="btn" type="submit">Start my request</button>
+        <a class="mini-call" href={`tel:${phoneTel}`}>Or call {phone}</a>
+      </form>
 
-      <section id="testimonials" class="wrap section">
-        <h2>What Customers Say</h2>
-        <p class="sub" style="margin-top:0;">(We can swap these with your real reviews any time.)</p>
-        <div class="testimonials">
-          <div class="quote">
-            <p>“Clear communication, fair pricing, and the finished work looks fantastic.”</p>
-            <div class="who">— Local homeowner</div>
-          </div>
-          <div class="quote">
-            <p>“They showed up on time, explained options, and delivered exactly what we wanted.”</p>
-            <div class="who">— Lehigh Valley client</div>
-          </div>
-          <div class="quote">
-            <p>“Fast turnaround, professional work, and no surprises on the estimate.”</p>
-            <div class="who">— Repeat customer</div>
-          </div>
-        </div>
-      </section>
+      <div class="hero-card-fine muted">
+        No pressure. No spam. Just a fast follow-up.
+      </div>
+    </aside>
+  </section>
 
-      <section id="faq" class="wrap section">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq">
-          <details open>
-            <summary>Will I receive a response within 24–48 hours?</summary>
-            <p>
-              Yes. We’re committed to getting back to you promptly within 24–48 hours from your inquiry.
-            </p>
-          </details>
-          <details>
-            <summary>What is your hourly rate, and do you have a job minimum?</summary>
-            <p>
-              Our hourly rate is competitive and reflects the quality of our work. For detailed pricing and any job minimums,
-              request a quote and we’ll provide a clear estimate for your project.
-            </p>
-          </details>
-          <details>
-            <summary>Can I expect multiple estimates for my project?</summary>
-            <p>
-              Yes. We can provide multiple approaches and estimates so you can choose what best fits your budget and goals.
-            </p>
-          </details>
-          <details>
-            <summary>Are the repairs guaranteed?</summary>
-            <p>
-              Yes. We stand behind our work. If anything comes up after service, reach out and we’ll make it right.
-            </p>
-          </details>
-        </div>
-        <div class="cta" style="margin-top: 1.5rem;">
-          <a class="btn" href="/request-a-quote">Request a Quote</a>
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </div>
-      </section>
+  <section id="services" class="wrap section">
+    <h2>Home Services in the Lehigh Valley</h2>
+    <p class="sub" style="margin-top:0;">Pick the category that fits your project.</p>
 
-      <footer class="wrap footer">
-        <div>
-          <strong>Revision Home Improvements</strong><br />
-          Lehigh Valley, PA<br />
-          <a class="mutedlink" href={`tel:${phoneTel}`}>{phone}</a>
-        </div>
-        <div class="footer-links">
-          <a href="/request-a-quote">Request a Quote</a>
-          <a href={`tel:${phoneTel}`}>Call {phone}</a>
-        </div>
-      </footer>
+    <div class="services">
+      <a class="service" href="/services/remodeling">
+        <h3>Remodeling</h3>
+        <p>Kitchens, bathrooms, and interior updates that elevate your space.</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a class="service" href="/services/repairs">
+        <h3>Repairs & Punch Lists</h3>
+        <p>Doors, trim, drywall, touch-ups—get the nagging list done.</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+      <a class="service" href="/services/flooring">
+        <h3>Flooring & Finishes</h3>
+        <p>Durable flooring and clean, professional finishing details.</p>
+        <span class="service-link">Learn more →</span>
+      </a>
+    </div>
 
-      <a class="sticky-call" href={`tel:${phoneTel}`}>Call {phone}</a>
-    </main>
-  </body>
-</html>
+    <div class="trust">
+      <div class="trust-item"><strong>Response</strong><br/>24–48 hours</div>
+      <div class="trust-item"><strong>Service Area</strong><br/>Lehigh Valley, PA</div>
+      <div class="trust-item"><strong>Estimates</strong><br/>Clear & itemized</div>
+    </div>
+
+    <div class="cta" style="margin-top: 16px;">
+      <a class="btn" href="/request-a-quote">Request a Quote</a>
+      <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+    </div>
+  </section>
+
+  <section id="process" class="wrap section">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li>
+        <div class="step-title">Tell us what you need</div>
+        <div>Use the quote form or call—share the basics (scope, city/zip, timeline).</div>
+      </li>
+      <li>
+        <div class="step-title">Confirm details</div>
+        <div>We’ll follow up to confirm scope and schedule an onsite visit if needed.</div>
+      </li>
+      <li>
+        <div class="step-title">Get a clear estimate</div>
+        <div>You’ll receive a straightforward estimate with options when it helps.</div>
+      </li>
+      <li>
+        <div class="step-title">We complete the work</div>
+        <div>Professional results, tidy work area, and communication throughout.</div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="gallery" class="wrap section">
+    <h2>Recent Work</h2>
+    <p class="sub" style="margin-top: 0;">A few snapshots from past projects.</p>
+    <div class="gallery">
+      <img src="/gallery/cdd6b-img_1479.jpg" alt="Home improvement project photo" loading="lazy" width="600" height="360" />
+      <img src="/gallery/7e4fe-img_8568.jpg" alt="Interior project photo" loading="lazy" width="600" height="360" />
+      <img src="/gallery/4864b-img_7545.jpg" alt="Remodeling project photo" loading="lazy" width="600" height="360" />
+      <img src="/gallery/654ed-img_7827.jpg" alt="Repair and finishing project photo" loading="lazy" width="600" height="360" />
+      <img src="/gallery/6cca4-img_7834.jpg" alt="Finished room project photo" loading="lazy" width="600" height="360" />
+      <img src="/gallery/af916-img_7708-1.jpg" alt="Before and after home improvement project photo" loading="lazy" width="600" height="360" />
+    </div>
+  </section>
+
+  <section id="faq" class="wrap section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <details open>
+        <summary>How quickly will you respond?</summary>
+        <p class="muted">We aim to reply within 24–48 hours for new requests.</p>
+      </details>
+      <details>
+        <summary>Do you do small jobs and punch lists?</summary>
+        <p class="muted">Yes—repairs and punch lists are a great fit. Send your list and we’ll recommend next steps.</p>
+      </details>
+      <details>
+        <summary>Can you provide options to fit different budgets?</summary>
+        <p class="muted">Often, yes. When it makes sense, we’ll share multiple approaches so you can choose what fits.</p>
+      </details>
+      <details>
+        <summary>What areas do you serve?</summary>
+        <p class="muted">Lehigh Valley, PA (Allentown, Bethlehem, Easton, and nearby towns).</p>
+      </details>
+    </div>
+
+    <div class="cta" style="margin-top: 1.5rem;">
+      <a class="btn" href="/request-a-quote">Request a Quote</a>
+      <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  :root {
-    --bg: #0b0f14;
-    --card: #121826;
-    --muted: #a9b3c1;
-    --text: #eef2f7;
-    --brand: #ff3b30;
-    --border: rgba(255, 255, 255, 0.12);
-  }
-  body {
-    margin: 0;
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
-    background: radial-gradient(1200px 600px at 20% 0%, rgba(255, 59, 48, 0.18), transparent 60%),
-      radial-gradient(1200px 600px at 90% 10%, rgba(99, 102, 241, 0.18), transparent 55%),
-      var(--bg);
-    color: var(--text);
-  }
-  a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 22px 20px;
-  }
-  .brand { font-weight: 800; letter-spacing: 0.2px; }
-  .nav { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
-  .nav a { opacity: 0.9; }
-  .nav a:hover { opacity: 1; }
-
   .hero {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 24px;
-    padding: 20px;
-    padding-bottom: 8px;
+    padding: 6px 0 8px;
+    align-items: start;
   }
   h1 { font-size: 44px; line-height: 1.05; margin: 0 0 12px; }
-  .sub { color: var(--muted); font-size: 18px; line-height: 1.5; margin: 0 0 18px; }
-  .note { color: var(--muted); margin-top: 16px; max-width: 60ch; }
+  .sub { color: var(--muted); font-size: 18px; line-height: 1.5; margin: 0 0 10px; }
+  .note { color: var(--muted); margin-top: 14px; max-width: 62ch; }
+
+  .hero-bullets {
+    display: grid;
+    gap: 10px;
+    margin-top: 12px;
+    color: var(--muted);
+  }
+  .hero-bullets strong { color: var(--text); }
+
   .cta { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn {
-    background: var(--brand);
-    color: white;
-    padding: 12px 16px;
-    border-radius: 12px;
-    font-weight: 700;
-    border: 1px solid transparent;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn-outline {
-    background: transparent;
-    border: 1px solid var(--border);
-  }
 
   .hero-card {
     background: rgba(18, 24, 38, 0.72);
@@ -259,12 +186,23 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     padding: 16px;
     backdrop-filter: blur(10px);
   }
-  .hero-card-title { font-weight: 800; margin-top: 10px; }
-  .hero-card-body { color: var(--muted); }
+  .hero-card-title { font-weight: 900; }
+  .hero-card-body { color: var(--muted); margin-top: 8px; }
+  .hero-card-fine { margin-top: 10px; font-size: 14px; }
 
-  .section { padding: 32px 20px; }
+  .mini-form { margin-top: 14px; display: grid; gap: 10px; }
+  .mini-form label { display: grid; gap: 6px; font-weight: 700; }
+  select, input {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+    color: var(--text);
+    font: inherit;
+  }
+  .mini-call { color: var(--muted); font-weight: 700; }
+
   h2 { font-size: 28px; margin: 0 0 14px; }
-  .bullets { display: grid; gap: 10px; color: var(--muted); }
 
   .services {
     margin-top: 16px;
@@ -281,7 +219,7 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
   }
   .service:hover { border-color: rgba(255, 59, 48, 0.35); transform: translateY(-1px); }
   .service p { color: var(--muted); margin: 8px 0 0; }
-  .service-link { display: inline-block; margin-top: 10px; color: var(--text); font-weight: 800; opacity: 0.9; }
+  .service-link { display: inline-block; margin-top: 10px; font-weight: 900; opacity: 0.92; }
 
   .steps {
     margin: 0;
@@ -297,7 +235,7 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     border-radius: 16px;
     padding: 16px;
   }
-  .step-title { font-weight: 800; margin-bottom: 6px; }
+  .step-title { font-weight: 900; margin-bottom: 6px; }
   .steps div { color: var(--muted); }
 
   .trust {
@@ -330,21 +268,6 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     background: rgba(255,255,255,0.02);
   }
 
-  .testimonials {
-    margin-top: 14px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .quote {
-    background: rgba(18, 24, 38, 0.55);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 16px;
-  }
-  .quote p { margin: 0; }
-  .who { margin-top: 10px; color: var(--muted); font-weight: 700; }
-
   .faq details {
     background: rgba(18, 24, 38, 0.55);
     border: 1px solid var(--border);
@@ -352,38 +275,8 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     padding: 14px 16px;
     margin: 10px 0;
   }
-  .faq summary { cursor: pointer; font-weight: 700; }
-  .faq p { color: var(--muted); margin: 10px 0 0; }
-
-  .footer {
-    padding: 28px 20px 40px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .footer-links { display: flex; gap: 14px; align-items: center; }
-  .footer-links a { color: var(--muted); }
-  .footer-links a:hover { color: var(--text); }
-  .mutedlink { color: var(--muted); }
-
-  .sticky-call {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    z-index: 50;
-    background: var(--brand);
-    color: white;
-    padding: 12px 14px;
-    border-radius: 999px;
-    font-weight: 800;
-    border: 1px solid rgba(0,0,0,0.2);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-  }
-  @media (min-width: 900px) {
-    .sticky-call { display: none; }
-  }
+  .faq summary { cursor: pointer; font-weight: 800; }
+  .faq p { margin: 10px 0 0; }
 
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -392,6 +285,5 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     .steps { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; }
     .trust { grid-template-columns: 1fr; }
-    .testimonials { grid-template-columns: 1fr; }
   }
 </style>

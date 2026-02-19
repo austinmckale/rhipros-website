@@ -1,74 +1,112 @@
 ---
-const phone = "484-706-9229";
-const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const towns = [
+  "Allentown",
+  "Bethlehem",
+  "Easton",
+  "Whitehall",
+  "Emmaus",
+  "Macungie",
+  "Nazareth",
+  "Hellertown",
+  "Catasauqua",
+];
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Flooring & Finishes | Revision Home Improvements</title>
-    <meta name="description" content="Flooring and finishing work in the Lehigh Valley. Call or request a quote from Revision Home Improvements." />
-  </head>
-  <body>
-    <main class="wrap">
-      <header class="header">
-        <a href="/" class="brand">Revision Home Improvements</a>
-        <nav class="nav">
-          <a href="/">Home</a>
-          <a href="/request-a-quote">Request a Quote</a>
-          <a class="btn" href={`tel:${phoneTel}`}>Call {phone}</a>
-        </nav>
-      </header>
+<BaseLayout
+  title="Flooring & Finishes in Lehigh Valley, PA | Revision Home Improvements"
+  description="Flooring installs, baseboards, trim, and finishing work in the Lehigh Valley, PA. Request a quote for clean, professional results."
+>
+  <section class="wrap section" style="padding-top:0;">
+    <div class="card">
+      <h1>Flooring & Finishes</h1>
+      <p class="muted" style="margin-top:0;">
+        Durable floors and clean finishing details that make a space feel complete.
+        We focus on tidy work, tight lines, and a clear scope before we start.
+      </p>
 
-      <section class="card">
-        <h1>Flooring & Finishes</h1>
-        <p class="muted">Durable floors and clean finishing details that make a space feel done.</p>
-
-        <div class="grid">
-          <div class="box">
-            <h2>Typical work</h2>
-            <ul>
-              <li>Flooring installs & updates</li>
-              <li>Baseboards / trim finishing</li>
-              <li>Transitions and detail work</li>
-            </ul>
-          </div>
-          <div class="box">
-            <h2>What you get</h2>
-            <ul>
-              <li>Clear estimate and scope</li>
-              <li>Professional finish quality</li>
-              <li>Fast response (24–48 hours)</li>
-              <li>Work we stand behind</li>
-            </ul>
-          </div>
+      <div class="grid">
+        <div class="box">
+          <h2>Typical work</h2>
+          <ul>
+            <li>Flooring installs & updates</li>
+            <li>Baseboards / trim finishing</li>
+            <li>Transitions and detail work</li>
+            <li>Fixes for squeaks, gaps, and worn areas (when applicable)</li>
+          </ul>
         </div>
-
-        <div class="cta">
-          <a class="btn" href="/request-a-quote">Request a Quote</a>
-          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+        <div class="box">
+          <h2>What you get</h2>
+          <ul>
+            <li>Clear estimate and scope</li>
+            <li>Professional finish quality</li>
+            <li>Fast response (24–48 hours)</li>
+            <li>Follow-up support after completion</li>
+          </ul>
         </div>
-      </section>
-    </main>
-  </body>
-</html>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href="/request-a-quote?service=Flooring">Request a Quote</a>
+        <a class="btn btn-outline" href="/services/remodeling">Considering a remodel?</a>
+      </div>
+
+      <h2 style="margin-top: 22px;">Service area</h2>
+      <p class="muted">We regularly work in: {towns.join(", ")} (and nearby towns in the Lehigh Valley).</p>
+
+      <h2 style="margin-top: 22px;">Flooring & finishes FAQ</h2>
+      <div class="faq">
+        <details open>
+          <summary>Do you help with baseboards/trim after flooring is installed?</summary>
+          <p class="muted">Yes—finishing details like baseboards, transitions, and trim are often the difference between “done” and “finished.”</p>
+        </details>
+        <details>
+          <summary>Can you handle small areas or single rooms?</summary>
+          <p class="muted">Often, yes. Send your room details and location and we’ll tell you the best next step.</p>
+        </details>
+        <details>
+          <summary>What should I send for an accurate quote?</summary>
+          <p class="muted">Room size, current flooring type, the new material you’re considering, and a few photos help a lot.</p>
+        </details>
+      </div>
+
+      <div class="cta" style="margin-top: 16px;">
+        <a class="btn" href="/request-a-quote?service=Flooring">Request a Quote</a>
+        <a class="btn btn-outline" href="/services/repairs">Need repairs first?</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
 
 <style>
-  :root { --bg:#0b0f14; --card:#121826; --muted:#a9b3c1; --text:#eef2f7; --brand:#ff3b30; --border: rgba(255,255,255,0.12);} 
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial;background:var(--bg);color:var(--text);} 
-  .wrap{max-width:980px;margin:0 auto;padding:18px 20px 40px;} a{color:inherit;} 
-  .header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 16px;flex-wrap:wrap;}
-  .brand{font-weight:900;text-decoration:none;}
-  .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
-  .card{background:rgba(18,24,38,.7);border:1px solid var(--border);border-radius:16px;padding:18px;}
-  h1{margin:0 0 10px;} h2{margin:18px 0 10px;font-size:18px;}
-  .muted{color:var(--muted);margin:0 0 16px;}
-  ul{margin:0;padding-left:18px;color:var(--muted);} li{margin:6px 0;}
-  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
-  .box{background:rgba(18,24,38,.55);border:1px solid var(--border);border-radius:16px;padding:14px;}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
-  .btn{background:var(--brand);color:white;padding:12px 16px;border-radius:12px;font-weight:900;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
-  .btn-outline{background:transparent;border:1px solid var(--border);} 
-  @media(max-width:720px){.grid{grid-template-columns:1fr;}}
+  h1 { margin: 0 0 10px; }
+  h2 { margin: 18px 0 10px; font-size: 18px; }
+
+  ul { margin: 0; padding-left: 18px; color: var(--muted); }
+  li { margin: 6px 0; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+  .box {
+    background: rgba(18, 24, 38, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+  }
+
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .faq details {
+    background: rgba(18, 24, 38, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 10px 0;
+  }
+  .faq summary { cursor: pointer; font-weight: 800; }
+  .faq p { margin: 10px 0 0; }
+
+  @media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+  }
 </style>

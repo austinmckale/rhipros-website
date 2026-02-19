@@ -1,0 +1,106 @@
+---
+import "../styles/global.css";
+
+export type Props = {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+};
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogTitle = title,
+  ogDescription = description,
+} = Astro.props;
+
+const businessName = "Revision Home Improvements";
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const region = "Lehigh Valley, PA";
+
+const canonicalUrl = (() => {
+  // Astro.site may not be configured. Fall back to current origin.
+  const base = (Astro.site ?? new URL(Astro.url.origin));
+  const path = canonicalPath ?? Astro.url.pathname;
+  return new URL(path, base).toString();
+})();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  name: businessName,
+  telephone: phone,
+  areaServed: region,
+  url: canonicalUrl,
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={ogDescription} />
+
+    <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="wrap header">
+      <a class="brand" href="/" aria-label={`${businessName} home`}>{businessName}</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services/remodeling">Remodeling</a>
+        <a href="/services/repairs">Repairs</a>
+        <a href="/services/flooring">Flooring</a>
+        <a class="btn" href="/request-a-quote">Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="wrap footer">
+      <div>
+        <strong>{businessName}</strong><br />
+        {region}<br />
+        <a class="mutedlink" href={`tel:${phoneTel}`}>{phone}</a>
+        <div class="muted" style="margin-top:10px; max-width: 60ch;">
+          Service area: Allentown, Bethlehem, Easton, Whitehall, Emmaus, Macungie, Nazareth, Hellertown, Catasauqua & nearby.
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="/request-a-quote">Request a Quote</a>
+        <a href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+    </footer>
+
+    <div class="sticky-bar" role="region" aria-label="Quick contact">
+      <div class="sticky-bar-inner">
+        <a class="btn" href="/request-a-quote">Request a Quote</a>
+        <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+      </div>
+    </div>
+  </body>
+</html>
