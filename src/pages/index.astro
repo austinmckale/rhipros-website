@@ -64,8 +64,8 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
   </section>
 
   <section id="services" class="wrap section">
-    <h2>Home Services in the Lehigh Valley</h2>
-    <p class="sub" style="margin-top:0;">Pick the category that fits your project.</p>
+    <h2>Core Services</h2>
+    <p class="sub" style="margin-top:0;">Pick the service that fits your project—we’ll follow up with clear next steps.</p>
 
     <div class="services">
       <a class="service" href="/services/kitchen-remodeling">
@@ -110,33 +110,53 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
       <a class="btn" href="/request-a-quote">Request a Quote</a>
       <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
     </div>
+
+    <h3 class="kicker">Local services people search for</h3>
+    <div class="search-grid" aria-label="Local service searches">
+      <a class="search-pill" href="/request-a-quote?service=Kitchen%20Remodeling&location=Allentown">Kitchen remodeling contractor in Allentown, PA</a>
+      <a class="search-pill" href="/request-a-quote?service=Bathroom%20Remodeling&location=Bethlehem">Bathroom remodeling in Bethlehem, PA</a>
+      <a class="search-pill" href="/request-a-quote?service=Basement%20Finishing&location=Easton">Basement finishing in Easton, PA</a>
+      <a class="search-pill" href="/request-a-quote?service=Drywall%20Installation%20and%20Repair&location=Whitehall">Drywall repair in Whitehall, PA</a>
+      <a class="search-pill" href="/request-a-quote?service=Flooring%20Installation&location=Emmaus">Flooring installation in Emmaus, PA</a>
+      <a class="search-pill" href="/request-a-quote?service=Water%20Damage%20Restoration&location=Lehigh%20Valley">Water damage restoration in Lehigh Valley</a>
+    </div>
+
+    <h3 class="kicker">Service Areas</h3>
+    <div class="areas" aria-label="Service areas">
+      <div class="area"><strong>Allentown, PA</strong><span>Lehigh County</span></div>
+      <div class="area"><strong>Bethlehem, PA</strong><span>Lehigh / Northampton</span></div>
+      <div class="area"><strong>Easton, PA</strong><span>Northampton County</span></div>
+      <div class="area"><strong>Whitehall, PA</strong><span>Lehigh County</span></div>
+      <div class="area"><strong>Emmaus, PA</strong><span>Lehigh County</span></div>
+      <div class="area"><strong>Lehigh Valley, PA</strong><span>Eastern Pennsylvania</span></div>
+    </div>
   </section>
 
   <section id="process" class="wrap section">
     <h2>How it works</h2>
     <ol class="steps">
       <li>
-        <div class="step-title">Tell us what you need</div>
-        <div>Use the quote form or call—share the basics (scope, city/zip, timeline).</div>
+        <div class="step-title">1. Quick discovery call</div>
+        <div>Tell us your priorities, budget range, and timeline so we can scope correctly.</div>
       </li>
       <li>
-        <div class="step-title">Confirm details</div>
-        <div>We’ll follow up to confirm scope and schedule an onsite visit if needed.</div>
+        <div class="step-title">2. Scope + estimate</div>
+        <div>We provide a clear project plan with transparent next steps.</div>
       </li>
       <li>
-        <div class="step-title">Get a clear estimate</div>
-        <div>You’ll receive a straightforward estimate with options when it helps.</div>
+        <div class="step-title">3. Build + communication</div>
+        <div>Work moves forward with consistent updates and a final walkthrough.</div>
       </li>
       <li>
-        <div class="step-title">We complete the work</div>
-        <div>Professional results, tidy work area, and communication throughout.</div>
+        <div class="step-title">4. Support after completion</div>
+        <div>If anything comes up, reach out—we stand behind our work.</div>
       </li>
     </ol>
   </section>
 
   <section id="gallery" class="wrap section">
-    <h2>Recent Work</h2>
-    <p class="sub" style="margin-top: 0;">A few snapshots from past projects.</p>
+    <h2>Project Highlights</h2>
+    <p class="sub" style="margin-top: 0;">A few snapshots to show the kind of work we do. Ask for examples similar to your project.</p>
     <div class="gallery">
       <img src="/gallery/cdd6b-img_1479.jpg" alt="Home improvement project photo" loading="lazy" width="600" height="360" />
       <img src="/gallery/7e4fe-img_8568.jpg" alt="Interior project photo" loading="lazy" width="600" height="360" />
@@ -144,6 +164,19 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
       <img src="/gallery/654ed-img_7827.jpg" alt="Repair and finishing project photo" loading="lazy" width="600" height="360" />
       <img src="/gallery/6cca4-img_7834.jpg" alt="Finished room project photo" loading="lazy" width="600" height="360" />
       <img src="/gallery/af916-img_7708-1.jpg" alt="Before and after home improvement project photo" loading="lazy" width="600" height="360" />
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="urgent">
+      <div>
+        <h2 style="margin:0;">Need urgent water damage help?</h2>
+        <p class="sub" style="margin:8px 0 0;">Water damage calls get priority scheduling. Call for the fastest next steps.</p>
+      </div>
+      <div class="cta" style="justify-content:flex-end;">
+        <a class="btn" href={`tel:${phoneTel}`}>Call {phone}</a>
+        <a class="btn btn-outline" href="/services/water-damage-restoration">Water damage info</a>
+      </div>
     </div>
   </section>
 
@@ -271,6 +304,39 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
   }
   .trust-item strong { color: var(--text); }
 
+  .kicker { margin: 22px 0 10px; font-size: 16px; letter-spacing: 0.02em; text-transform: uppercase; color: var(--muted); }
+
+  .search-grid {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .search-pill {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(18,24,38,0.45);
+    color: var(--text);
+    font-weight: 800;
+  }
+  .search-pill:hover { border-color: rgba(255, 59, 48, 0.35); }
+
+  .areas {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .area {
+    background: rgba(18,24,38,0.45);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+  }
+  .area span { display:block; margin-top: 6px; color: var(--muted); font-weight: 700; }
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -284,6 +350,18 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     border-radius: 14px;
     border: 1px solid var(--border);
     background: rgba(255,255,255,0.02);
+  }
+
+  .urgent {
+    background: rgba(18,24,38,0.72);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .faq details {
@@ -303,5 +381,7 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     .steps { grid-template-columns: 1fr; }
     .gallery { grid-template-columns: 1fr 1fr; }
     .trust { grid-template-columns: 1fr; }
+    .search-grid { grid-template-columns: 1fr; }
+    .areas { grid-template-columns: 1fr; }
   }
 </style>
