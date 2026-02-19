@@ -50,25 +50,35 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
       </section>
 
       <section id="services" class="wrap section">
-        <h2>Providing Excellence in Home Services for the Lehigh Valley</h2>
+        <h2>Home Services in the Lehigh Valley</h2>
+        <p class="sub" style="margin-top:0;">Fast response. Clear estimates. High-quality work.</p>
         <div class="bullets">
-          <div>Trustworthy and reliable team members</div>
-          <div>We help you create your vision of your home</div>
-          <div>Responsibility with affordable prices</div>
+          <div><strong>Trustworthy</strong> and reliable team members</div>
+          <div>We help <strong>you</strong> create your vision of your home</div>
+          <div>Responsible work at <strong>affordable</strong> prices</div>
         </div>
         <div class="services">
           <div class="service">
-            <h3>Home Improvement</h3>
-            <p>Repairs, updates, and punch-list work to keep your home in great shape.</p>
+            <h3>Remodeling</h3>
+            <p>Kitchens, bathrooms, and interior updates that elevate your space.</p>
           </div>
           <div class="service">
-            <h3>Remodeling</h3>
-            <p>Kitchen, bath, and interior remodel support—from planning to finishing touches.</p>
+            <h3>Repairs & Punch Lists</h3>
+            <p>Doors, trim, drywall, touch-ups—get the nagging list done.</p>
           </div>
           <div class="service">
             <h3>Flooring & Finishes</h3>
-            <p>Refresh your space with durable flooring and clean, professional finishes.</p>
+            <p>Durable flooring and clean, professional finishing details.</p>
           </div>
+        </div>
+        <div class="cta" style="margin-top: 16px;">
+          <a class="btn" href="/request-a-quote">Request a Quote</a>
+          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+        </div>
+        <div class="trust">
+          <div class="trust-item"><strong>Response</strong><br/>24–48 hours</div>
+          <div class="trust-item"><strong>Service Area</strong><br/>Lehigh Valley, PA</div>
+          <div class="trust-item"><strong>Work</strong><br/>Guaranteed</div>
         </div>
       </section>
 
@@ -104,6 +114,29 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
           <img src="/gallery/654ed-img_7827.jpg" alt="Project photo" loading="lazy" />
           <img src="/gallery/6cca4-img_7834.jpg" alt="Project photo" loading="lazy" />
           <img src="/gallery/af916-img_7708-1.jpg" alt="Project photo" loading="lazy" />
+        </div>
+        <div class="cta" style="margin-top: 16px;">
+          <a class="btn" href="/request-a-quote">Request a Quote</a>
+          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+        </div>
+      </section>
+
+      <section id="testimonials" class="wrap section">
+        <h2>What Customers Say</h2>
+        <p class="sub" style="margin-top:0;">(We can swap these with your real reviews any time.)</p>
+        <div class="testimonials">
+          <div class="quote">
+            <p>“Clear communication, fair pricing, and the finished work looks fantastic.”</p>
+            <div class="who">— Local homeowner</div>
+          </div>
+          <div class="quote">
+            <p>“They showed up on time, explained options, and delivered exactly what we wanted.”</p>
+            <div class="who">— Lehigh Valley client</div>
+          </div>
+          <div class="quote">
+            <p>“Fast turnaround, professional work, and no surprises on the estimate.”</p>
+            <div class="who">— Repeat customer</div>
+          </div>
         </div>
       </section>
 
@@ -261,6 +294,21 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
   .step-title { font-weight: 800; margin-bottom: 6px; }
   .steps div { color: var(--muted); }
 
+  .trust {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .trust-item {
+    background: rgba(18, 24, 38, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 14px;
+    color: var(--muted);
+  }
+  .trust-item strong { color: var(--text); }
+
   .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -275,6 +323,21 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     border: 1px solid var(--border);
     background: rgba(255,255,255,0.02);
   }
+
+  .testimonials {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .quote {
+    background: rgba(18, 24, 38, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+  }
+  .quote p { margin: 0; }
+  .who { margin-top: 10px; color: var(--muted); font-weight: 700; }
 
   .faq details {
     background: rgba(18, 24, 38, 0.55);
@@ -321,5 +384,8 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     h1 { font-size: 36px; }
     .services { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr; }
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .trust { grid-template-columns: 1fr; }
+    .testimonials { grid-template-columns: 1fr; }
   }
 </style>
