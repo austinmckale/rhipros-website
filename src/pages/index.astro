@@ -93,6 +93,19 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
         </ol>
       </section>
 
+      <section id="gallery" class="wrap section">
+        <h2>Recent Work</h2>
+        <p class="sub" style="margin-top: 0;">A few snapshots from past projects.</p>
+        <div class="gallery">
+          <img src="/gallery/cdd6b-img_1479.jpg" alt="Project photo" loading="lazy" />
+          <img src="/gallery/7e4fe-img_8568.jpg" alt="Project photo" loading="lazy" />
+          <img src="/gallery/4864b-img_7545.jpg" alt="Project photo" loading="lazy" />
+          <img src="/gallery/654ed-img_7827.jpg" alt="Project photo" loading="lazy" />
+          <img src="/gallery/6cca4-img_7834.jpg" alt="Project photo" loading="lazy" />
+          <img src="/gallery/af916-img_7708-1.jpg" alt="Project photo" loading="lazy" />
+        </div>
+      </section>
+
       <section id="faq" class="wrap section">
         <h2>Frequently Asked Questions</h2>
         <div class="faq">
@@ -243,6 +256,21 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
   }
   .step-title { font-weight: 800; margin-bottom: 6px; }
   .steps div { color: var(--muted); }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
 
   .faq details {
     background: rgba(18, 24, 38, 0.55);
