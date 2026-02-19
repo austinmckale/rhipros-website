@@ -1,0 +1,93 @@
+---
+const phone = "484-706-9229";
+const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
+const towns = [
+  "Allentown",
+  "Bethlehem",
+  "Easton",
+  "Whitehall",
+  "Emmaus",
+  "Macungie",
+  "Nazareth",
+  "Hellertown",
+  "Catasauqua",
+  "Lehigh Valley",
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Remodeling in Lehigh Valley | Revision Home Improvements</title>
+    <meta name="description" content="Kitchen, bath, and interior remodeling support in the Lehigh Valley. Request an estimate or call Revision Home Improvements." />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="header">
+        <a href="/" class="brand">Revision Home Improvements</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="/request-a-quote">Request a Quote</a>
+          <a class="btn" href={`tel:${phoneTel}`}>Call {phone}</a>
+        </nav>
+      </header>
+
+      <section class="card">
+        <h1>Remodeling</h1>
+        <p class="muted">
+          Kitchen, bath, and interior updates—planned clearly, executed cleanly.
+          We serve homeowners across the Lehigh Valley.
+        </p>
+
+        <div class="grid">
+          <div class="box">
+            <h2>Common projects</h2>
+            <ul>
+              <li>Kitchen refresh & finish updates</li>
+              <li>Bathroom updates</li>
+              <li>Trim, doors, and interior improvements</li>
+              <li>Flooring + paint + finishing details</li>
+            </ul>
+          </div>
+          <div class="box">
+            <h2>What you can expect</h2>
+            <ul>
+              <li>Fast response (24–48 hours)</li>
+              <li>Clear estimates and options</li>
+              <li>Professional finish quality</li>
+              <li>Work we stand behind</li>
+            </ul>
+          </div>
+        </div>
+
+        <h2>Service area</h2>
+        <p class="muted">We regularly work in: {towns.join(", ")}.</p>
+
+        <div class="cta">
+          <a class="btn" href="/request-a-quote">Request a Quote</a>
+          <a class="btn btn-outline" href={`tel:${phoneTel}`}>Call {phone}</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  :root { --bg:#0b0f14; --card:#121826; --muted:#a9b3c1; --text:#eef2f7; --brand:#ff3b30; --border: rgba(255,255,255,0.12);} 
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial;background:var(--bg);color:var(--text);} 
+  .wrap{max-width:980px;margin:0 auto;padding:18px 20px 40px;} a{color:inherit;} 
+  .header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0 16px;flex-wrap:wrap;}
+  .brand{font-weight:900;text-decoration:none;}
+  .nav{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+  .card{background:rgba(18,24,38,.7);border:1px solid var(--border);border-radius:16px;padding:18px;}
+  h1{margin:0 0 10px;} h2{margin:18px 0 10px;font-size:18px;}
+  .muted{color:var(--muted);margin:0 0 16px;}
+  ul{margin:0;padding-left:18px;color:var(--muted);} li{margin:6px 0;}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .box{background:rgba(18,24,38,.55);border:1px solid var(--border);border-radius:16px;padding:14px;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+  .btn{background:var(--brand);color:white;padding:12px 16px;border-radius:12px;font-weight:900;border:1px solid transparent;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;}
+  .btn-outline{background:transparent;border:1px solid var(--border);} 
+  @media(max-width:720px){.grid{grid-template-columns:1fr;}}
+</style>

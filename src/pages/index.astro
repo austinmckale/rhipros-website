@@ -58,18 +58,21 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
           <div>Responsible work at <strong>affordable</strong> prices</div>
         </div>
         <div class="services">
-          <div class="service">
+          <a class="service" href="/services/remodeling">
             <h3>Remodeling</h3>
             <p>Kitchens, bathrooms, and interior updates that elevate your space.</p>
-          </div>
-          <div class="service">
+            <span class="service-link">Learn more →</span>
+          </a>
+          <a class="service" href="/services/repairs">
             <h3>Repairs & Punch Lists</h3>
             <p>Doors, trim, drywall, touch-ups—get the nagging list done.</p>
-          </div>
-          <div class="service">
+            <span class="service-link">Learn more →</span>
+          </a>
+          <a class="service" href="/services/flooring">
             <h3>Flooring & Finishes</h3>
             <p>Durable flooring and clean, professional finishing details.</p>
-          </div>
+            <span class="service-link">Learn more →</span>
+          </a>
         </div>
         <div class="cta" style="margin-top: 16px;">
           <a class="btn" href="/request-a-quote">Request a Quote</a>
@@ -274,8 +277,11 @@ const phoneTel = "+1" + phone.replace(/[^0-9]/g, "");
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 16px;
+    display: block;
   }
+  .service:hover { border-color: rgba(255, 59, 48, 0.35); transform: translateY(-1px); }
   .service p { color: var(--muted); margin: 8px 0 0; }
+  .service-link { display: inline-block; margin-top: 10px; color: var(--text); font-weight: 800; opacity: 0.9; }
 
   .steps {
     margin: 0;
